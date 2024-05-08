@@ -2,7 +2,9 @@
 
 ## 前置条件
 1.参考文档 https://backstage.io/docs/getting-started/ 确保开发工具和环境已经配置好。
+
 2.创建github token以备后面的step2使用，参考文档
+
 3.创建github Auth APP client id和client secret 参考文档 (https://backstage.io/docs/auth/github/provider#create-an-oauth-app-on-github)
 
 
@@ -38,7 +40,8 @@ yarn dev
 
 4.如果要开启debug模式，执行 'LOG_LEVEL=debug yarn dev'
 
-5. 使用k8s plugin应用需要打label不然无法识别。
+
+5.使用k8s plugin应用需要打label不然无法识别。
 
 
 
