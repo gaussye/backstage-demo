@@ -74,17 +74,17 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
     #Start a GitHub Action to build an EKS cluster with Terraform
-    - id: github-action
-      name: Trigger GitHub Action
-      action: github:actions:dispatch
-      input:
-        workflowId: blank.yml
-        repoUrl: 'github.com?repo=my-test-github-action&owner=gaussye'
-        branchOrTagName: 'main'
-        workflowInputs:
-          clusterName: ${{ parameters.clusterName }}
-          awsRegion: ${{ parameters.region }}
-          action: ${{ parameters.action }}
+    # - id: github-action
+    #   name: Trigger GitHub Action
+    #   action: github:actions:dispatch
+    #   input:
+    #     workflowId: blank.yml
+    #     repoUrl: 'github.com?repo=my-test-github-action&owner=gaussye'
+    #     branchOrTagName: 'main'
+    #     workflowInputs:
+    #       clusterName: ${{ parameters.clusterName }}
+    #       awsRegion: ${{ parameters.region }}
+    #       action: ${{ parameters.action }}
     #The final step is to register our new component in the catalog.
     - id: register
       name: Register
