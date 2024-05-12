@@ -61,7 +61,13 @@ techdocs:
     runIn: 'docker' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
-
+jenkins:
+  baseUrl: http://localhost:8080
+  username: ${JENKINS_USERNAME}
+  apiKey: ${JENKINS_APIKEY}
+  # optionally add extra headers
+  # extraRequestHeaders:
+  #   extra-header: my-value
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   providers:

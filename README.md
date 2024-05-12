@@ -44,6 +44,10 @@ yarn dev
 5.使用k8s plugin应用需要打label不然无法识别。
 
 
+6.使用jenksin插件
+- frontend的配置参考：https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins
+- bandend的配置参考(backend 只需按照New Backend System配置，然后在 app-config配置好provider即可)：https://github.com/backstage/community-plugins/tree/main/workspaces/jenkins/plugins/jenkins-backend
+
 
 
 

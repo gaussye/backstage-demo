@@ -57,6 +57,12 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import {
+  EntityJenkinsContent,
+  EntityLatestJenkinsRunCard,
+  isJenkinsAvailable,
+} from '@backstage-community/plugin-jenkins';
+
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -74,6 +80,9 @@ const cicdContent = (
       <EntityGithubActionsContent />
     </EntitySwitch.Case>
 
+    <EntitySwitch.Case if={isJenkinsAvailable}>
+          <EntityJenkinsContent />
+   </EntitySwitch.Case>
     <EntitySwitch.Case>
       <EmptyState
         title="No CI/CD available for this entity"
@@ -137,6 +146,16 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+    <EntitySwitch>
+        <EntitySwitch.Case if={isJenkinsAvailable}>
+          <Grid item sm={6}>
+            <EntityLatestJenkinsRunCard
+              branch="main,master"
+              variant="gridItem"
+            />
+          </Grid>
+        </EntitySwitch.Case>
+      </EntitySwitch>
   </Grid>
 );
 
